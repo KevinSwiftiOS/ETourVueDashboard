@@ -1,2 +1,21 @@
-# ETourVueDashboard
-智慧旅游前端代码实现，采用vue的element UI框架实现
+# travel-dashboard
+
+## Project setup
+```
+npm install
+```
+
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
+
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### Lints and fixes files
+```
+npm run lint
+```
