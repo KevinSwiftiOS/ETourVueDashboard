@@ -144,7 +144,7 @@
                     </block-box>
                 </el-col>
             </el-row>
-            <my-show class="commentAnalyze"></my-show>
+            <hotel-comment-sentiment class="commentAnalyze"></hotel-comment-sentiment>
             <div class="content-container-top">
                 <go-top-page></go-top-page>
             </div>
@@ -170,7 +170,7 @@
     let echarts = require('echarts/lib/echarts')
     import {get_session_storage, set_session_storage} from "../../base/sessionStorage";
     import {get_num_hotel_rank, get_score_hotel_rank} from "../../base/getRankForHotel";
-    import myShow from "./../myShow"
+    import hotelCommentSentiment from "../../components/QdhHotelShow/hotelCommentSentiment"
     import goTopPage from "../../components/divide-page/goTopPage"
     import promptInfo from "../../components/divide-page/promptInfo"
 
@@ -185,7 +185,7 @@
             getRadarHotel,
             getTreeMapHotel,
             getSelectCompared,
-            myShow,
+            hotelCommentSentiment,
             goTopPage,
             promptInfo
         },
