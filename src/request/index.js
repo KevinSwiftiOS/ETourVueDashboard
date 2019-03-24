@@ -150,6 +150,7 @@ http.hotelComTagClassSum = async function(body) {
 }
 
 
+
 //首页 所有景区与千岛湖景点top10排行
 http.spotRank = async function () {
   return await POST('/api/homepage/spotrank'); 
@@ -182,4 +183,16 @@ http.restaurantPieChart = async function () {
 http.restaurantBadColum = async function () {
   return await POST('/api/homepage/restaurantStatistical/badColum');
 }
-export default http;
+http.hotelComScorePie = async function(body) { // homepage 酒店 饼图 评分分布图
+    return await POST("/api/homepage/qdhhotelcomscorepie",body);
+}
+
+http.hotelSpotComNumChange = async function(body) { //homepage 千岛湖景点年度评论数量变化折线图
+    return await POST("/api/homepage/qdhspotcomnumchange",body);
+}
+// /api/homepage/qdhhotelscorelimit
+
+http.hotelSocreLimitTen = async function(body) {    // 千岛湖酒店 评分前十名
+    return await POST("/api/homepage/qdhhotelscorelimit",body);
+}
+
