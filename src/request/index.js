@@ -148,4 +148,17 @@ http.hotelComTagClassSum = async function(body) {
     return await POST("/api/count",body);
 }
 
+http.hotelComScorePie = async function(body) { // homepage 酒店 饼图 评分分布图
+    return await POST("/api/homepage/qdhhotelcomscorepie",body);
+}
+
+http.hotelSpotComNumChange = async function(body) { //homepage 千岛湖景点年度评论数量变化折线图
+    return await POST("/api/homepage/qdhspotcomnumchange",body);
+}
+// /api/homepage/qdhhotelscorelimit
+
+http.hotelSocreLimitTen = async function(body) {    // 千岛湖酒店 评分前十名
+    return await POST("/api/homepage/qdhhotelscorelimit",body);
+}
+
 export default http;
