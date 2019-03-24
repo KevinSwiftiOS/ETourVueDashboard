@@ -2,35 +2,17 @@
   <div class="login-box">
     <el-card class="login-card" shadow="hover">
       <div class="system-title">登录</div>
-      <el-form
-        class="login-form"
-        :model="ruleForm"
-        label-position="top"
-        status-icon
-        :rules="rules2"
-        ref="ruleForm"
-        label-width="100px"
-      >
+      <el-form class="login-form" :model="ruleForm" label-position="top" status-icon :rules="rules2" ref="ruleForm" label-width="100px">
         <el-form-item label="账号" prop="username">
-          <el-input
-            v-model="ruleForm.username"
-            placeholder="请输入账号"
-            autocomplete="off"
-          ></el-input>
+          <el-input v-model="ruleForm.username" placeholder="请输入账号" autocomplete="off"></el-input>
         </el-form-item>
         <el-form-item label="密码" prop="password">
-          <el-input
-            type="password"
-            placeholder="请输入密码"
-            v-model="ruleForm.password"
-            autocomplete="off"
-          ></el-input>
+          <el-input type="password" placeholder="请输入密码" v-model="ruleForm.password" autocomplete="off"></el-input>
         </el-form-item>
+
       </el-form>
       <div class="login-form-button">
-        <el-button type="primary" @click="submitForm('ruleForm')"
-          >登录</el-button
-        >
+        <el-button type="primary" @click="submitForm('ruleForm')">登录</el-button>
       </div>
     </el-card>
     <div class="welcome-txt">欢迎使用千岛湖智慧旅游系统</div>
@@ -57,7 +39,7 @@ export default {
       if (res.code === 0) {
         localStorage.setItem("token", res.data.token);
         this.$parent.getuser();
-        this.$router.push({ name: "Home" });
+        this.$router.push({ name: "home" });
       } else {
         // 登陆失败
       }

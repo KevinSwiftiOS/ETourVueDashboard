@@ -36,6 +36,9 @@
 
                 <router-link to="/spiders">
                     <i class="el-icon-view"></i> 爬虫详情</router-link>
+                
+                <router-link to="/homepage">
+                    <i class="el-icon-view"></i>主页</router-link>    
             </div>
             <div class="menu">
                 <span class="time">{{ time }}</span>

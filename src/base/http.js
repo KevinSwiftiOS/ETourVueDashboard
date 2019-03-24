@@ -9,11 +9,9 @@ import { Message } from "element-ui";
 // config
 const host =
   process.env.NODE_ENV === "development"
-      //? "http://127.0.0.1:3101/"
-     /* ?"http://10.1.17.9:3101"
-    : "http://111.231.71.167:3101/";*/
-     ?"https://etour-api.lab421.top"
-   : "https://etour-api.lab421.top";
+      ?"http://127.0.0.1:3101/"
+     :"http://127.0.0.1:3101/"
+  
 const baseURL = host;
 const option = {
   method: "get",

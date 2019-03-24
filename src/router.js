@@ -18,6 +18,7 @@ import MyShow from "./views/myShow";
 import HotelSummary from "./views/HotelSummary";
 import QdhHotelMultiSummary from './views/QdhHotelSummaryDetail/QdhHotelMultiSummary';
 import QdhHotelSingleShow from './views/QdhHotelSummaryDetail/QdhHotelSingleShow';  // 每家酒店详情展示
+import HomePage from './views/HomePage';
 
 Vue.use(Router);
 
@@ -36,6 +37,12 @@ const router = new Router({
             component: Index, //首页4个导航栏
             redirect: "/home",
             children: [
+                {
+                    path: "/homepage", //主页面 18个景区
+                    name: "HomePage",
+                    component: HomePage
+                },
+
                 {
                     path: "/home", //主页面 18个景区
                     name: "Home",

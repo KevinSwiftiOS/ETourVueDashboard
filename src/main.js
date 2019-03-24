@@ -6,6 +6,7 @@ import router from "./router";
 import store from "./store";
 import VCharts from "v-charts";
 import echarts from "echarts";
+import './assets/icon/iconfont.css'
 Vue.config.productionTip = false;
 // element-ui
 import ElementUI from "element-ui";

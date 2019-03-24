@@ -1,4 +1,5 @@
 import { GET, POST, DIRECT } from "../base/http";
+import { async } from "q";
 
 const http = {};
 // 登录
@@ -148,4 +149,37 @@ http.hotelComTagClassSum = async function(body) {
     return await POST("/api/count",body);
 }
 
+
+//首页 所有景区与千岛湖景点top10排行
+http.spotRank = async function () {
+  return await POST('/api/homepage/spotrank'); 
+}
+//首页 千岛湖景区同环比数量比较
+http.qdhSpotCommentTotal = async function () {
+  return await POST('/api/homepage/qdhspotcommenttotal');
+}
+//首页 千岛湖酒店0-3，4-5评分
+http.qdhHotelComScorePie = async function () {
+  return await POST('/api/homepage/qdhhotelcomscorepie');
+}
+//首页 千岛湖酒店排名top10
+http.qdHhotelScoreLimit = async function () {
+  return await POST('/api/homepage/qdhhotelscorelimit');
+}
+// 首页 千岛湖酒店折线图
+http.qdhspotComnumChange = async function () {
+  return await POST('/api/homepage/qdhspotcomnumchange');
+}
+// 首页 千岛湖餐饮排行
+http.restaurantRank = async function () {
+    return await POST('/api/homepage/restaurantStatistical/rank');
+}
+// 首页 千岛湖餐饮饼图
+http.restaurantPieChart = async function () {
+  return await POST('/api/homepage/restaurantStatistical/piechart');
+}
+// 首页 千岛湖餐饮柱状图（差评图）
+http.restaurantBadColum = async function () {
+  return await POST('/api/homepage/restaurantStatistical/badColum');
+}
 export default http;
