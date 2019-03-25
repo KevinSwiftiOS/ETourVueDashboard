@@ -54,7 +54,6 @@ export default {
       const res = await http.getspotlist();
       if (res.code === 0 && res.data && res.data.list) {
         this.spotlist = res.data.list;
-        console.log(this.spotlist, 'searchId', this.searchId);
       }
     },
     renderSpot(data) {

@@ -195,4 +195,5 @@ http.hotelSpotComNumChange = async function(body) { //homepage 千岛湖景点�
 http.hotelSocreLimitTen = async function(body) {    // 千岛湖酒店 评分前十名
     return await POST("/api/homepage/qdhhotelscorelimit",body);
 }
+export default http;
 
