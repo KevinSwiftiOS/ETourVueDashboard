@@ -3,9 +3,12 @@
 </template>
 
 <script>
+
     import http from '../../request/index';
     import echarts from "echarts";
     export default {
+        name: "BadColum",
+
         data(){
             return{
                 badColum: null,
@@ -16,14 +19,14 @@
         created(){
      this.getInit();
         },
-        name: "BadColum",
+
         methods:{
             getInit:async function(){
                 const restaurantBadColumRes = await http.restaurantBadColum();
                 if (restaurantBadColumRes.code === 0 && restaurantBadColumRes.data) {
                     this.restaurantBadColum = restaurantBadColumRes.data;
                     this.restaurantBadColumXAxis = restaurantBadColumRes.Xtime;
-                    this.drawBadColum();
+                   this.drawBadColum();
                 }
             },
             drawBadColum: function() {

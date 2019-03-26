@@ -14,6 +14,7 @@ export default {
     this.getuser();
   },
   methods: {
+
     getuser: async function() {
       const token = localStorage.getItem("token");
       if (token) {

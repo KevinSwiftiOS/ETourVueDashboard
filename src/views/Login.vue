@@ -39,7 +39,7 @@ export default {
       if (res.code === 0) {
         localStorage.setItem("token", res.data.token);
         this.$parent.getuser();
-        this.$router.push({ name: "home" });
+        this.$router.push({ name: "Home" });
       } else {
         // 登陆失败
       }

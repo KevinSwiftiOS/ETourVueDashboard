@@ -40,7 +40,7 @@
     <el-row :gutter="20">
       <el-col :span="8">
         <div class="grid-content bg-purple">
-<bad-colum></bad-colum>
+
         </div>
       </el-col>
       <el-col :span="8">
@@ -73,7 +73,8 @@ export default {
   components:{
       QdhCommentTotal,
     SpotRank,
-    BadColum,
+      BadColum,
+
     ColumnChart,
     PieChartOfHotel,
     PieChartOfRestaurant,
