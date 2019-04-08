@@ -19,19 +19,19 @@ export default {
   data() {
     return {
       spots: total_spots,
-      selectspot: get_session_storage("curr_spot")
+      selectspot: this.$route.query.scenicName,
     };
   },
   methods: {},
   watch: {
     selectspot: function(val) {
-      var curr_spot = get_session_storage("curr_spot");
+      var curr_spot =  this.$route.query.scenicName;
       //若不相同进行切换 跳转
-      if (curr_spot != val) {
-        set_session_storage("curr_spot", val);
+
+        this.$router.push({path: '/ScenicInfo?scenicName=' + curr_spot});
         //触发动作
         this.$emit("initrender");
-      }
+
     }
   }
 };

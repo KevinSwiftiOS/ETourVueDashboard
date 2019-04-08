@@ -96,7 +96,7 @@ this.getInit();
   },
 
   methods: {
-    getInit: async function () {
+    getInit: async function () { 
       //千岛湖景区景点排行
       const spotRankRes = await http.spotRank();
       if (spotRankRes.code === 0 && spotRankRes.data) {

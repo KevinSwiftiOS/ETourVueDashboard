@@ -222,9 +222,9 @@ export default {
           document
             .getElementById("detail")
             .addEventListener("click", function() {
-              set_session_storage("curr_spot", data._id);
 
-              that.$router.push({ name: "ScenicInfo" });
+
+              that.$router.push({path: '/ScenicInfo?scenicName=' + data._id});
             });
         });
       } else {

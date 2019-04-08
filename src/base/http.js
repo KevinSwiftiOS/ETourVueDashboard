@@ -9,8 +9,8 @@ import { Message } from "element-ui";
 // config
 const host =
   process.env.NODE_ENV === "development"
-      ?"http://127.0.0.1:3101/"
-     :"http://127.0.0.1:3101/"
+      ?"http://120.55.59.187:3000/"
+     :"http://120.55.59.187:3000/"
   
 const baseURL = host;
 const option = {

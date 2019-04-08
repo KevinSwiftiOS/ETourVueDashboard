@@ -16,108 +16,47 @@
               type="date"
               placeholder="选择日期"
               :picker-options="pickerOptions1"
-            >
-            </el-date-picker>
+            ></el-date-picker>
           </el-col>
 
           <!-- 平台 -->
           <el-col :md="4" class="item">
             <el-select v-model="website" style="width:100%">
-              <el-option
-                v-for="item in total_websites"
-                :key="item"
-                :label="item"
-                :value="item"
-              >
-              </el-option>
+              <el-option v-for="item in total_websites" :key="item" :label="item" :value="item"></el-option>
             </el-select>
           </el-col>
           <el-col :md="4" class="item">
             <el-select v-model="spot" style="width:100%">
-              <el-option
-                v-for="item in total_spots"
-                :key="item"
-                :label="item"
-                :value="item"
-              >
-              </el-option>
+              <el-option v-for="item in total_spots" :key="item" :label="item" :value="item"></el-option>
             </el-select>
           </el-col>
           <el-col :md="4" class="item">
             <el-select v-model="source" style="width:100%">
-              <el-option
-                v-for="item in sources"
-                :key="item"
-                :label="item"
-                :value="item"
-              >
-              </el-option>
+              <el-option v-for="item in sources" :key="item" :label="item" :value="item"></el-option>
             </el-select>
           </el-col>
           <el-col :md="4" class="item button-box">
-            <el-button type="primary" style="float:right" @click="search()"
-              >确定</el-button
-            >
+            <el-button type="primary" style="float:right" @click="search()">确定</el-button>
           </el-col>
         </el-row>
       </block-box>
 
       <el-table :data="list" border style="width: 100%">
-        <el-table-column
-          prop="comment_user_name"
-          label="评论用户"
-          width="180"
-          align="center"
-        >
-        </el-table-column>
-        <el-table-column
-          prop="shop_name"
-          label="评论店铺"
-          width="180"
-          align="center"
-        >
-        </el-table-column>
-        <el-table-column
-          prop="comment_time"
-          label="评论日期"
-          width="120"
-          align="center"
-        >
-        </el-table-column>
-        <el-table-column
-          label="评论内容"
-          width="400"
-          align="center"
-          prop="comment_short_content"
-        >
-        </el-table-column>
-        <el-table-column
-          prop="comment_score"
-          label="评论分数"
-          align="center"
-          width="120"
-        >
-        </el-table-column>
-        <el-table-column
-          prop="crawl_time"
-          label="爬取时间"
-          align="center"
-          width="180"
-        >
-        </el-table-column>
+        <el-table-column prop="comment_user_name" label="评论用户" width="180" align="center"></el-table-column>
+        <el-table-column prop="shop_name" label="评论店铺" width="180" align="center"></el-table-column>
+        <el-table-column prop="comment_time" label="评论日期" width="120" align="center"></el-table-column>
+        <el-table-column label="评论内容" width="400" align="center" prop="comment_short_content"></el-table-column>
+        <el-table-column prop="comment_score" label="评论分数" align="center" width="120"></el-table-column>
+        <el-table-column prop="crawl_time" label="爬取时间" align="center" width="180"></el-table-column>
         <el-table-column label="评论详情" align="center">
           <template slot-scope="scope">
-            <el-button
-              size="mini"
-              @click="content_detail(scope.$index, scope.row)"
-              >点击查看详情</el-button
-            >
+            <el-button size="mini" @click="content_detail(scope.$index, scope.row)">点击查看详情</el-button>
           </template>
         </el-table-column>
       </el-table>
     </div>
 
-    <router-view v-else />
+    <router-view v-else/>
   </div>
 </template>
 <script>

@@ -12,7 +12,7 @@
           <el-breadcrumb-item>{{ name }}</el-breadcrumb-item>
         </el-breadcrumb>
       </div>
-      <spot-select v-on:initrender="initrender"></spot-select>
+
       <div class="main-box">
         <!-- 基本信息 -->
         <block-box title="关键指标" icon="icon-dashboard">
@@ -146,16 +146,15 @@ export default {
     randomNumber,
     blockBox,
     monthSelectSimple,
-    weekSelectSimple,
-    spotSelect
+    weekSelectSimple
   },
   data() {
     return {
       loading: true,
       //当前景区
-      curr_spot: get_session_storage("curr_spot"),
+      curr_spot: this.$route.query.scenicName,
       //当前景区的名字
-      name: spot_infos[get_session_storage("curr_spot")].name,
+      name: spot_infos[this.$route.query.scenicName].name,
       week: new Date(),
       //展示的数据 景区评论数信息和评分数信息
       score_data: {},
@@ -292,7 +291,8 @@ export default {
   },
   methods: {
     initrender: function() {
-      this.curr_spot = get_session_storage("curr_spot");
+      localStorage.setItem("token",this.$route.query.token);
+      this.curr_spot = this.$route.query.scenicName;
       this.loading = true;
 
       this.initchart();
@@ -320,22 +320,23 @@ export default {
       if (res.code === 0) {
         this.num_data = get_num_rank(
           res.data.list,
-          get_session_storage("curr_spot"),
+                this.$route.query.scenicName,
           true
         );
         this.score_data = get_score_rank(
           res.data.list,
-          get_session_storage("curr_spot"),
+                this.$route.query.scenicName,
           true
         );
       }
     },
     spotdetail: async function() {
       const res = await http.spotdetail({
-        cur_spot: get_session_storage("curr_spot")
+        cur_spot:  this.$route.query.scenicName
       });
 
-      this.name = spot_infos[get_session_storage("curr_spot")].name;
+      this.name = spot_infos[this.$route.query.scenicName].name;
+
       this.loading = false;
       if (res.code === 0) {
         this.startTime = res.data.startTime;
@@ -389,7 +390,7 @@ export default {
     getchart3: async function(e) {
       this.loading = true;
       const res = await http.spotdetailcompared({
-        cur_spot: get_session_storage("curr_spot"),
+        cur_spot: this.$route.query.scenicName,
         compared_time: e.date,
         type: "1",
         time: this.time
@@ -417,7 +418,7 @@ export default {
     getchart4: async function(e) {
       this.loading = true;
       const res = await http.spotdetailcompared({
-        cur_spot: get_session_storage("curr_spot"),
+        cur_spot: this.$route.query.scenicName,
         compared_time: e.date,
         type: "2",
         time: this.time
