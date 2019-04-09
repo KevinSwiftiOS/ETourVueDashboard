@@ -3,10 +3,10 @@
         <div class="navbar">
             <div class="logo"><img src="../assets/icons/logo1.png" ></div>
             <div class="modules">
-                <router-link to="/home"> <i class="icon-home"> </i> 首页</router-link>
+                <!--<router-link to="/home"> <i class="icon-home"> </i> 首页</router-link>-->
 
                 <router-link
-                        to="/scenicinfo"
+                        to="/scenicinfo?scenicName=千岛湖"
                         :class="{ 'router-link-active': $route.name === 'ScenicInfo' }"
                 >
                     <i class="el-icon-zoom-in"> </i> 景区详情</router-link>
@@ -34,11 +34,11 @@
                     酒店总览
                 </router-link>
 
-                <router-link to="/spiders">
-                    <i class="el-icon-view"></i> 爬虫详情</router-link>
+                <!--<router-link to="/spiders">-->
+                    <!--<i class="el-icon-view"></i> 爬虫详情</router-link>-->
                 
-                <router-link to="/homepage">
-                    <i class="el-icon-view"></i>主页</router-link>    
+                <!--<router-link to="/homepage">-->
+                    <!--<i class="el-icon-view"></i>主页</router-link>    -->
             </div>
             <div class="menu">
                 <span class="time">{{ time }}</span>

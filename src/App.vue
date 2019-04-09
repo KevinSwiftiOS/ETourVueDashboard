@@ -16,14 +16,16 @@ export default {
   methods: {
 
     getuser: async function() {
+      if(this.$route.query.token != undefined) {
+        localStorage.setItem("token", this.$route.query.token);
+      }
       const token = localStorage.getItem("token");
+      console.log(token)
       if (token) {
         const res = await http.getuser();
         if (res.code === 0) {
           this.user = res.data;
         }
-      } else {
-        this.$router.push("/login");
       }
     }
   }

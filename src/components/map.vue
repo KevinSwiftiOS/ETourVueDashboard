@@ -224,7 +224,7 @@ export default {
             .addEventListener("click", function() {
 
 
-              that.$router.push({path: '/ScenicInfo?scenicName=' + data._id});
+              // that.$router.push({path: '/ScenicInfo?scenicName=' + data._id});
             });
         });
       } else {

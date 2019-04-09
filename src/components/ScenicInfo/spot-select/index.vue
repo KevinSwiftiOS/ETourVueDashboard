@@ -25,13 +25,15 @@ export default {
   methods: {},
   watch: {
     selectspot: function(val) {
-      var curr_spot =  this.$route.query.scenicName;
-      //若不相同进行切换 跳转
 
-        this.$router.push({path: '/ScenicInfo?scenicName=' + curr_spot});
-        //触发动作
-        this.$emit("initrender");
+   if(this.$route.query.scenicName != val) {
 
+     // //若不相同进行切换 跳转
+     //
+     window.location.replace('/ScenicInfo?scenicName=' + val);
+     //触发动作
+     this.$emit("initrender");
+   }
     }
   }
 };
