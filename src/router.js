@@ -26,11 +26,11 @@ const router = new Router({
     mode: "history",
     base: process.env.BASE_URL,
     routes: [
-        {
-            path: "/login", //登录页面
-            name: "Login",
-            component: Login
-        },
+        // {
+        //     path: "/login", //登录页面
+        //     name: "Login",
+        //     component: Login
+        // },
         {
             path: "/",
             name: "Index",
@@ -123,17 +123,19 @@ const router = new Router({
                 }
             ]
         },
-        {path: "*", redirect: {name: "home"}} // 重定向
+        // {path: "*", redirect: {name: "home"}} // 重定向
     ]
 });
 
-router.beforeEach((to, from, next) => {
-    const tk = localStorage.getItem("token");
-    if (!tk && to.path !== "/login") {
-        next("/login");
-    } else {
-        next();
-    }
-});
+// router.beforeEach((to, from, next) => {
+//     console.log(router.currentRoute);
+//     // const tk = localStorage.getItem("token");
+//     // if (!tk && to.path !== "/login") {
+//     //     next("/login");
+//     // } else {
+//     //     next();
+//     // }
+//     next(router.currentRoute.fullPath);
+// });
 
 export default router;

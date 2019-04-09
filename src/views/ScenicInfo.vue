@@ -123,6 +123,7 @@
             </block-box>
           </el-col>
         </el-row>
+        <spot-select></spot-select>
       </div>
     </div>
   </div>
@@ -146,7 +147,8 @@ export default {
     randomNumber,
     blockBox,
     monthSelectSimple,
-    weekSelectSimple
+    weekSelectSimple,
+    spotSelect
   },
   data() {
     return {
@@ -281,7 +283,9 @@ export default {
       time: ""
     };
   },
-  created() {},
+  created() {
+
+  },
   mounted() {
     this.initchart();
     //景区详情
@@ -291,7 +295,8 @@ export default {
   },
   methods: {
     initrender: function() {
-      localStorage.setItem("token",this.$route.query.token);
+
+
       this.curr_spot = this.$route.query.scenicName;
       this.loading = true;
 
