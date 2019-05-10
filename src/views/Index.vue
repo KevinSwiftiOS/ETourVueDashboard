@@ -40,23 +40,23 @@
                 <!--<router-link to="/homepage">-->
                     <!--<i class="el-icon-view"></i>主页</router-link>    -->
             </div>
-            <div class="menu">
-                <span class="time">{{ time }}</span>
-                <span>
-          <el-dropdown
-                  trigger="click"
-                  @command="handleCommand"
-          >
-            <span class="el-dropdown-link">
-              {{ $parent.user.username }}
-              <i class="el-icon-arrow-down el-icon--right"></i>
-            </span>
-            <el-dropdown-menu slot="dropdown">
-              <el-dropdown-item command="logout">退出</el-dropdown-item>
-            </el-dropdown-menu>
-          </el-dropdown>
-        </span>
-            </div>
+            <!--<div class="menu">-->
+                <!--<span class="time">{{ time }}</span>-->
+                <!--<span>-->
+          <!--<el-dropdown-->
+                  <!--trigger="click"-->
+                  <!--@command="handleCommand"-->
+          <!--&gt;-->
+            <!--<span class="el-dropdown-link">-->
+              <!--{{ $parent.user.username }}-->
+              <!--<i class="el-icon-arrow-down el-icon&#45;&#45;right"></i>-->
+            <!--</span>-->
+            <!--<el-dropdown-menu slot="dropdown">-->
+              <!--<el-dropdown-item command="logout">退出</el-dropdown-item>-->
+            <!--</el-dropdown-menu>-->
+          <!--</el-dropdown>-->
+        <!--</span>-->
+            <!--</div>-->
         </div>
         <router-view class="view" />
     </div>
