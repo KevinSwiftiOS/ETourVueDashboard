@@ -12,7 +12,7 @@
           <choose-list
             class="margin-left-10"
             :values="businessCirle"
-            :select="selectBusiness" 
+            :select="selectBusiness"
             v-on:on-select-change="onSelectChange"
           />
           <!-- select表示当前列表所选，values表示列表里所有的值 -->
@@ -95,7 +95,7 @@ export default {
   },
   methods: {
 
-    loadData: async function (page, type, site) { 
+    loadData: async function (page, type, site) {
       const asyncPromise = new Promise((resolve) => {
         setTimeout(() => {
           resolve(1);
@@ -117,7 +117,8 @@ export default {
 
       try {
         const params = { page, type, site }; // page,type,site作为参数传递到params里
-        const result = await http.restaurantList(params); 
+        console.log(params);
+        const result = await http.restaurantList(params);
         // const { page: pageData, data } = result
         const pageData = result.page;
         const data = result.data;

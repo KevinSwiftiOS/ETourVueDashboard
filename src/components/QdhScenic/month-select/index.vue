@@ -1,6 +1,6 @@
 <template>
   <el-row :gutter="20" class="month-search">
-    <el-col :xs="24" :sm="24" :md="2" class="item">
+    <el-col :xs="24" :sm="24" :md="2" :offset="2" class="item">
       <el-select v-model="searchData.time" style="width:100%">
         <el-option
           v-for="item in times"
@@ -142,18 +142,6 @@
       </el-select>
     </el-col>
 
-    <!-- 平台 -->
-    <el-col :xs="24" :sm="24" :md="4" class="item">
-      <el-select v-model="website" style="width:100%">
-        <el-option
-          v-for="item in websites"
-          :key="item"
-          :label="item"
-          :value="item"
-        >
-        </el-option>
-      </el-select>
-    </el-col>
 
     <el-col :xs="24" :sm="24" :md="6" class="item">
       <!-- 景区 -->
