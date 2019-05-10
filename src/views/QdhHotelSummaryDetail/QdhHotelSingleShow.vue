@@ -144,13 +144,13 @@
                     </block-box>
                 </el-col>
             </el-row>
-            <hotel-comment-sentiment class="commentAnalyze"></hotel-comment-sentiment>
+            <!--<hotel-comment-sentiment class="commentAnalyze"></hotel-comment-sentiment>-->
             <div class="content-container-top">
                 <go-top-page></go-top-page>
             </div>
-            <div class="">
+            <!--<div class="">
                 <prompt-info></prompt-info>
-            </div>
+            </div>-->
         </div>
     </div>
 </template>
@@ -581,6 +581,7 @@
                             label: hotel_shop_list[i].name
                         })
                     }
+                    console.log(this.optionSameRank, '输出当前等级的酒店')
                     var isExistFlag = false;
                     for (var i = 0; i < this.optionSameRank.length; i++) {
                         if (this.optionSameRank[i].value == this.currHotelName) {
