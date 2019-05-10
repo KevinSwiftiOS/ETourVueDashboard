@@ -61,33 +61,33 @@
 
         <block-box title="同时段不同景区评论数对比" icon="icon-comment">
           <month-select isMulti @search="searchchart1"></month-select>
-          <button
-            class="button-style"
-            v-show="!loading"
-            v-on:click="chart1otherisCompared()"
-          >
-            {{
-              chart1_other_is_compared
-                ? "不与其余景区作比较"
-                : "与其余景区作比较"
-            }}
-          </button>
+          <!--<button-->
+            <!--class="button-style"-->
+            <!--v-show="!loading"-->
+            <!--v-on:click="chart1otherisCompared()"-->
+          <!--&gt;-->
+            <!--{{-->
+              <!--chart1_other_is_compared-->
+                <!--? "不与其余景区作比较"-->
+                <!--: "与其余景区作比较"-->
+            <!--}}-->
+          <!--</button>-->
           <div class="chart" id="chart1"></div>
         </block-box>
 
         <block-box title="同时段不同景区评分对比" icon="icon-looks_5">
           <month-select @search="searchchart2"></month-select>
-          <button
-            class="button-style"
-            v-show="!loading"
-            v-on:click="chart2otherisCompared()"
-          >
-            {{
-              chart2_other_is_compared
-                ? "不与其余景区作比较"
-                : "与其余景区作比较"
-            }}
-          </button>
+          <!--<button-->
+            <!--class="button-style"-->
+            <!--v-show="!loading"-->
+            <!--v-on:click="chart2otherisCompared()"-->
+          <!--&gt;-->
+            <!--{{-->
+              <!--chart2_other_is_compared-->
+                <!--? "不与其余景区作比较"-->
+                <!--: "与其余景区作比较"-->
+            <!--}}-->
+          <!--</button>-->
           <div class="chart" id="chart2"></div>
         </block-box>
       </div>

@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="navbar">
-            <div class="logo"><img src="../assets/icons/logo1.png" ></div>
+
             <div class="modules">
                 <!--<router-link to="/home"> <i class="icon-home"> </i> 首页</router-link>-->
 
@@ -36,7 +36,7 @@
 
                 <!--<router-link to="/spiders">-->
                     <!--<i class="el-icon-view"></i> 爬虫详情</router-link>-->
-                
+
                 <!--<router-link to="/homepage">-->
                     <!--<i class="el-icon-view"></i>主页</router-link>    -->
             </div>
